@@ -38,12 +38,11 @@ function exampleFunction(num1, num2) {
  * }
 */
 const makePersonObject = (id, name, email) => {
-  const person = {
+  return {
     id: id,
     name: name,
     email: email
   }
-  return person;
 }
 
 /**
@@ -128,8 +127,12 @@ const getLastCarInfo = (arr) => {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-const getCarInfoById = (arr, id) => {
-  return `This is a ${arr[id-1].car_make} ${arr[id-1].car_model}`
+const getCarInfoById = (arr, num) => {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].id === num) {
+      return `This is a ${arr[i].car_make} ${arr[i].car_model}`
+    }
+  }
 }
 
 /**
